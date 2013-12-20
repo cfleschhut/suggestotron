@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  before_action :set_topic, only: [:show, :edit, :update, :destroy, :upvote]
 
   # GET /topics
   # GET /topics.json
@@ -59,6 +59,11 @@ class TopicsController < ApplicationController
       format.html { redirect_to topics_url }
       format.json { head :no_content }
     end
+  end
+
+  def upvote
+    @topic.votes.create
+    redirect_to topics_path
   end
 
   private
