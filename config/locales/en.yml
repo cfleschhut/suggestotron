@@ -21,3 +21,11 @@
 
 en:
   hello: "Hello world"
+
+  topics:
+    create:
+      notice: "Topic <strong>%{title}</strong> was successfully created."
+    update:
+      notice: "Topic <strong>%{title}</strong> was successfully updated."
+    destroy:
+      notice: "Topic <strong>%{title}</strong> was successfully deleted."
