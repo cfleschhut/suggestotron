@@ -1,11 +1,17 @@
 <%= form_for @topic do |f| %>
   <% if @topic.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
-
-      <ul>
+    <div class="alert alert-danger fade in">
+      <a class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
+      <p>
+        <strong>
+          <%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:
+        </strong>
+      </p>
+      <ul class="list-unstyled">
       <% @topic.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li>
+          <%= msg %>
+        </li>
       <% end %>
       </ul>
     </div>
