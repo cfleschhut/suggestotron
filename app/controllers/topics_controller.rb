@@ -42,7 +42,7 @@ class TopicsController < ApplicationController
   def update
     respond_to do |format|
       if @topic.update(topic_params)
-        format.html { redirect_to topics_path, notice: 'Topic was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Topic was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -63,7 +63,7 @@ class TopicsController < ApplicationController
 
   def upvote
     @topic.votes.create
-    redirect_to topics_path
+    redirect_to root_path
   end
 
   private

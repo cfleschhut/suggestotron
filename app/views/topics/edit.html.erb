@@ -1,6 +1,14 @@
-<h1>Editing topic</h1>
+<div class="page-header">
+  <h2>
+    Editing: <%= @topic.title %>
+  </h2>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @topic %> |
-<%= link_to 'Back', topics_path %>
+<hr>
+<p>
+  <%= link_to 'Show', @topic, class: 'btn btn-default btn-sm' %>
+  <%= link_to 'All topics', topics_path, class: 'btn btn-default btn-sm' %>
+</p>
+

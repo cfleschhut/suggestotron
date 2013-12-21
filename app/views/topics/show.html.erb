@@ -1,14 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <h2>
+    <%= @topic.title %>
+  </h2>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @topic.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
+<div>
   <%= @topic.description %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+<hr>
+<p>
+  <%= link_to edit_topic_path(@topic), class: 'btn btn-default btn-sm' do %>
+    <span class='glyphicon glyphicon-edit'></span>
+    Edit
+  <% end %>
+  <%= link_to @topic, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default btn-sm' do %>
+    <span class='glyphicon glyphicon-trash'></span>
+    Delete
+  <% end %>
+  <%= link_to 'All topics', topics_path, class: 'btn btn-default btn-sm' %>
+</p>

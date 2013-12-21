@@ -10,11 +10,18 @@
 </head>
 <body>
 
-<% flash.each do |name, msg| %>
-  <div id='notice'><%= msg %></div>
-<% end %>
+<div class="container">
 
-<%= yield %>
+  <% flash.each do |name, msg| %>
+    <div class='alert alert-info alert-dismissable fade in'>
+      <a class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
+      <%= msg %>
+    </div>
+  <% end %>
+
+  <%= yield %>
+
+</div>
 
 </body>
 </html>

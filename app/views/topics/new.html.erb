@@ -1,5 +1,12 @@
-<h1>New topic</h1>
+<div class="page-header">
+  <h2>
+    New topic
+  </h2>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', topics_path %>
+<hr>
+<p>
+  <%= link_to 'All topics', topics_path, class: 'btn btn-default btn-sm' %>
+</p>

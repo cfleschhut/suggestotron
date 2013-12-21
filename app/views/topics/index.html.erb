@@ -1,27 +1,30 @@
-<h1>Listing topics</h1>
+<h1>Topics</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
       <th>Votes</th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @topics.each do |topic| %>
       <tr>
-        <td><%= link_to topic.title, topic %></td>
-        <td><%= pluralize topic.votes.count, 'vote' %></td>
-        <td><%= button_to '+1', upvote_topic_path(topic), method: :post %></td>
-        <td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to topic.title, topic %>
+        </td>
+        <td>
+          <%= pluralize topic.votes.count, 'vote' %>
+        </td>
+        <td>
+          <%= button_to 'Upvote!', upvote_topic_path(topic), method: :post, class: 'btn btn-default btn-block' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Topic', new_topic_path %>
+<p>
+  <%= link_to 'New Topic', new_topic_path, class: 'btn btn-default' %>
+</p>
