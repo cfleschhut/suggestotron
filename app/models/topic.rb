@@ -3,4 +3,6 @@ class Topic < ActiveRecord::Base
 
   validates :title, presence: true
   validates :description, presence: true
+
+  scope :votes_count, -> { Topic.order('votes_count DESC') }
 end

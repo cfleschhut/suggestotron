@@ -15,7 +15,7 @@
           <%= link_to topic.title, topic %>
         </td>
         <td>
-          <%= pluralize topic.votes.count, 'vote' %>
+          <%= pluralize topic.votes.size, 'vote' %>
         </td>
         <td>
           <%= button_to 'Upvote!', upvote_topic_path(topic), method: :post, class: 'btn btn-default btn-block' %>
